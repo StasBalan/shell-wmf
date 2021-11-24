@@ -5,14 +5,14 @@ module.exports = {
     devServer: {
         port: 8083,
     },
-    publicPath: "http://localhost:8083/",
+    publicPath: process.env.NODE_ENV === 'development' ? "/" : "https://shell-wmf.vercel.app/",
     configureWebpack: {
         plugins: [
             new ModuleFederationPlugin({
                 name: "shell",
                 filename: "remoteEntry.js",
                 remotes: {
-                    profile: "profile@http://localhost:8084/remoteProfileEntry.js",
+                    profile: "profile@https://profile-wmf.vercel.app/remoteProfileEntry.js",
                     home: "home@http://localhost:8085/remoteHomeEntry.js",
                 },
                 exposes: {
