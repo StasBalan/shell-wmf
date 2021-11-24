@@ -13,6 +13,7 @@ module.exports = {
                 filename: "remoteEntry.js",
                 remotes: {
                     profile: "profile@https://profile-wmf.vercel.app/remoteProfileEntry.js",
+                    // profile: "profile@http://localhost:8084/remoteProfileEntry.js",
                     home: "home@https://home-wmf.vercel.app/remoteHomeEntry.js",
                 },
                 exposes: {

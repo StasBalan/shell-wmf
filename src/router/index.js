@@ -1,10 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import { ProfileRouters } from "profile/ProfileRouters";
+import ProfileRoutes from "profile/ProfileRoutes";
+
+// const ProfileRoutes = require("profile/ProfileRoutes").default;
 
 Vue.use(VueRouter);
 
-console.log('ProfileRouters', ProfileRouters);
+console.log('ProfileRoutes', ProfileRoutes);
 
 const routes = [
   {
@@ -17,7 +19,12 @@ const routes = [
   //   name: "Profile",
   //   component: () => import("profile/Profile"),
   // },
-  ...ProfileRouters,
+  // {
+  //   path: "/profile/new",
+  //   name: "Profile",
+  //   component: () => import("profile/ProfileNew"),
+  // },
+  ...ProfileRoutes,
   {
     path: "/home",
     name: "Home",
